@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-// import Login from "./User_Auth/login";
+import Login from "./User_Auth/login";
 import Signup from "./User_Auth/signup";
 import Profile from "./Profile";
 import Assets from "./Assets";
@@ -18,8 +18,8 @@ const App = () => {
         <NavBar />
         <div className="w-full h-full bg-[#EBEBEB]">
           <Routes>
-{/*             <Route path="/" element={<Login />} />
-            <Route path="/login" element={<Login />} /> */}
+            <Route path="/" element={<Login />} />
+            <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
             <Route path="/home" element={<Dashboard />} />
             <Route path="/logout" element={<Logout />} />
