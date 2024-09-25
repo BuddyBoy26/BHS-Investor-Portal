@@ -1,8 +1,8 @@
 import React from "react";
 
-const Signup = () => {
+const Login = () => {
   return (
-    <div className="bg-yellow-200 min-h-screen flex items-center justify-center">
+    <div className="bg-yellow-300 min-h-screen flex items-center justify-center">
       <div className="bg-white shadow-lg rounded-lg p-10 w-2/3 mx-auto flex justify-center items-center">
         <div className="w-1/2 pr-8">
           <div className="text-center mb-8">
@@ -14,29 +14,9 @@ const Signup = () => {
         <div className="lg:w-2/5 pl-8 h-full">
           <div className="bg-gray-100 p-8 rounded-xl shadow-lg">
             <h3 className="text-2xl font-bold mb-4 text-center">
-              Investors' Signup
+              Investors' Login
             </h3>
             <form>
-              <div className="mb-4">
-                <label className="block font-semibold pb-1.5 pl-1.5">
-                  Name
-                </label>
-                <input
-                  type="text"
-                  className="w-full px-4 py-1.5 rounded-lg border-0 focus:outline-none focus:ring-2 focus:ring-yellow-500"
-                  placeholder="Enter your name"
-                />
-              </div>
-              <div className="mb-4">
-                <label className="block font-semibold pb-1.5 pl-1.5">
-                  Phone Number
-                </label>
-                <input
-                  type="number"
-                  className="w-full px-4 py-1.5 rounded-lg border-0 focus:outline-none focus:ring-2 focus:ring-yellow-500"
-                  placeholder="Enter your phone number"
-                />
-              </div>
               <div className="mb-4">
                 <label className="block font-semibold pb-1.5 pl-1.5">
                   Email ID
@@ -44,7 +24,7 @@ const Signup = () => {
                 <input
                   type="text"
                   className="w-full px-4 py-1.5 rounded-lg border-0 focus:outline-none focus:ring-2 focus:ring-yellow-500"
-                  placeholder="Enter your email"
+                  placeholder="Enter your Email ID"
                 />
               </div>
               <div className="mb-4">
@@ -62,14 +42,14 @@ const Signup = () => {
                   type="submit"
                   className="w-1/3 object-center  bg-[#00D816] text-white py-2 rounded-lg hover:bg-green-600"
                 >
-                  Register
+                  Login
                 </button>
               </div>
             </form>
             <div className="text-center mt-4">
               <p>
-                <a href="/login" className="text-blue-500 hover:underline">
-                  Have an account?Login
+                <a href="/signup" className="text-blue-500 hover:underline">
+                  Don't have an account?Sign up
                 </a>
               </p>
             </div>
@@ -80,4 +60,4 @@ const Signup = () => {
   );
 };
 
-export default Signup;
+export default Login;

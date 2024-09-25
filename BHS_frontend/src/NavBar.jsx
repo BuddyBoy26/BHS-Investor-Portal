@@ -1,4 +1,4 @@
-import { Link as RouteLink, useNavigate } from "react-router-dom";
+import { Link as RouteLink } from "react-router-dom";
 import { buttonVariants } from "./ui/button";
 import { ArrowRight } from "lucide-react";
 

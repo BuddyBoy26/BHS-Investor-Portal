@@ -1,10 +1,10 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Login from "./User_Auth/login";
-import Signup from "./User_Auth/signup";
+import Login from "./userAuth/Login";
+import Signup from "./userAuth/Signup";
 import Profile from "./Profile";
 import Assets from "./Assets";
 import Contract from "./Contract";
-import Logout from "./User_Auth/Logout";
+import Logout from "./userAuth/Logout";
 import Help from "./help";
 import Asset from "./Asset";
 import Investment from "./Investment";
@@ -18,7 +18,7 @@ const App = () => {
         <NavBar />
         <div className="w-full h-full bg-[#EBEBEB]">
           <Routes>
-            <Route path="/" element={<Login />} />
+            <Route path="/" element={<Dashboard />} />
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
             <Route path="/home" element={<Dashboard />} />
