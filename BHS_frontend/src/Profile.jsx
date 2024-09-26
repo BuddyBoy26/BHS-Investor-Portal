@@ -14,7 +14,7 @@ const user = {
 
 function Profile() {
   return (
-    <div className="bg-gray-50 min-h-screen py-8">
+    <div className="bg-gray-100 min-h-screen py-8">
       <div className="lg:w-2/3 mx-auto flex flex-col bg-white shadow-md rounded-lg p-6 items-center content-center my-4">
         <img
           className="h-28 justify-center max-w-28 items-center rounded-full my-4"
@@ -27,7 +27,7 @@ function Profile() {
           Info about you and your preferences across Google services
         </p> */}
 
-        <div className="bg-gray-50 p-4 rounded-lg w-5/6 flex flex-col items-center content-center">
+        <div className="bg-gray-100 p-4 rounded-lg w-5/6 flex flex-col items-center content-center">
           <h2 className="text-xl font-medium text-gray-900 my-5 text-center">
             Your profile information in Bhavya Investor Portal
           </h2>
