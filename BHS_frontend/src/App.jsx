@@ -10,7 +10,6 @@ import Asset from "./Asset";
 import Investment from "./Investment";
 import NavBar from "./NavBar";
 import Dashboard from "./Dashboard";
-
 const App = () => {
   return (
     <>
