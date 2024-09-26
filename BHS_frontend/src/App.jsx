@@ -10,11 +10,11 @@ import Asset from "./Asset";
 import Investment from "./Investment";
 import NavBar from "./NavBar";
 import Dashboard from "./Dashboard";
-<<<<<<< HEAD
-=======
+// <<<<<<< HEAD
+// =======
 
 
->>>>>>> b0ccbed (investment ready 2)
+// >>>>>>> b0ccbed (investment ready 2)
 const App = () => {
   return (
     <>
