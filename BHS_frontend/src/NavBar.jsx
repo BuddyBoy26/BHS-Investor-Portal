@@ -3,7 +3,12 @@ import { buttonVariants } from "./ui/button";
 import { ArrowRight } from "lucide-react";
 
 const NavBar = () => {
-  let user = false;
+  const user ={
+    username: "John Doe",
+    avatar: "user.jpg",
+  }
+  let User = true;
+  
   return (
     <nav className="sticky z-40 h-16 inset-x-0 top-0 w-full border-b border-gray-200 bg-white/75 backdrop-blur-lg transition-all">
       <div className="flex items-center h-full px-4 justify-between w-full">
@@ -52,15 +57,15 @@ const NavBar = () => {
                 Dashboard ✨
               </RouteLink>
               <RouteLink
-                to="/form"
+                to="/profile"
                 className={buttonVariants({
                   size: "sm",
                   className:
                     "hidden sm:flex items-center gap-1 bg-black text-white",
                 })}
               >
-                Add Income/Expense
-                <ArrowRight className="ml-1.5 h-5 w-5" />
+                {user.username}
+                {/* <ArrowRight className="ml-1.5 h-5 w-5" /> */}
               </RouteLink>
             </>
           ) : (

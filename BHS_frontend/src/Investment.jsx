@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 import { jsPDF } from 'jspdf';
-
+import StatsTable from './statsTable';
 const Investment = () => {
   const [data, setData] = useState([]);
 
@@ -46,10 +46,10 @@ const Investment = () => {
   };
 
   return (
-    <div className="flex h-screen bg-gray-100">
+    <div className="flex bg-gray-100">
       <div className="flex-1 flex flex-col mx-8 sm:mx-12 lg:mx-16">
         {/* Profile Section */}
-        <div className="flex items-center mt-8 mb-6">
+        <div className="flex items-center mt-8 mb-6 m-6">
           <div className='pl-3'>
             <h2 className="text-3xl font-bold">Hello, John Doe</h2>
             <p className="text-gray-500 text-lg">Investment ID</p>
@@ -57,7 +57,8 @@ const Investment = () => {
         </div>
 
         <main className="flex-1">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 m-6">
             {/* Views Card */}
             <div className="p-4 bg-white rounded-lg shadow-md">
               <h2 className="text-lg font-bold">Investment Value</h2>
@@ -74,81 +75,54 @@ const Investment = () => {
 
             {/* Estimated Revenue Card */}
             <div className="p-4 bg-white rounded-lg shadow-md">
-              <h2 className="text-lg font-bold">Garunteed ROI</h2>
+              <h2 className="text-lg font-bold"> Ticket size</h2>
               <p className="text-3xl font-semibold">10%</p>
               <p className="text-sm text-green-500">+ $379K this month</p>
             </div>
 
             {/* Total Views Card */}
             <div className="p-4 bg-white rounded-lg shadow-md">
-              <h2 className="text-lg font-bold">Current ROI</h2>
-              <p className="text-3xl font-semibold">12%</p>
-              <p className="text-sm text-gray-500">Ranked #16 Globally</p>
+              <h2 className="text-lg font-bold">Agreed ROI</h2>
+              <button class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center m-2">
+  <svg class="fill-current w-4 h-4 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M13 8V2H7v6H2l8 8 8-8h-5zM0 18h20v2H0v-2z"/></svg>
+  <span>Download</span>
+</button>
             </div>
           </div>
-
-        <div className="flex flex-col items-center bg-gray-100 min-h-screen p-8">
-          <div className="flex flex-col w-full lg:flex-row lg:justify-between space-y-6 lg:space-y-0 lg:space-x-6">
-            {/* Profile Section */}
-            <div className="flex-1 bg-white p-6 rounded-lg shadow-md">
-              <h2 className="text-xl font-bold mb-4">Investment Overview</h2>
-              <ResponsiveContainer width="100%" height={300}>
-                <LineChart data={data}>
-                  <XAxis dataKey="date" />
-                  <YAxis />
-                  <CartesianGrid strokeDasharray="3 3" />
-                  <Tooltip />
-                  <Legend />
-                  <Line type="monotone" dataKey="views" stroke="#8884d8" />
-                </LineChart>
-              </ResponsiveContainer>
-            </div>
-
-            {/* Contract Details Section */}
-            <div className="flex flex-col lg:w-1/4 space-y-4">
-              <div className="bg-white p-6 rounded-lg shadow-md">
-                <h2 className="text-lg font-bold mb-4">Contract Details</h2>
-                <button
-                  className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mb-2"
-                  onClick={downloadContract}
-                >
-                  Download Contract
-                </button>
-              </div>
-              <div className="bg-white p-6 rounded-lg shadow-md">
-                <h2 className="text-lg font-bold mb-4">Assets</h2>
-                <button
-                  className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded"
-                  onClick={downloadPDF}
-                >
-                  Veiw your assets
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 m-6">
+            {/* Views Card */}
             <div className="p-4 bg-white rounded-lg shadow-md">
-              <h2 className="text-lg font-bold">Most Recent Video</h2>
-              <p>Men Vs Women Survive The Wilderness For $500,000</p>
-              <p>Views: 104M</p>
-              <p>Ranked 6th in views</p>
+              <h2 className="text-lg font-bold">Investment Value</h2>
+              <p className="text-3xl font-semibold">1.88B</p>
+              <p className="text-sm text-green-500">+108M in 28 Days</p>
             </div>
 
-            {/* Longs vs Shorts Views Section */}
+            {/* Subscribers Card */}
             <div className="p-4 bg-white rounded-lg shadow-md">
-              <h2 className="text-lg font-bold">Longs vs Shorts Views</h2>
-              <div className="flex items-center">
-                <div className="w-1/2">
-                  <p>Long Views: 492.9M</p>
-                  <p>Short Views: 1.4B</p>
-                </div>
-                <div className="w-1/2">
-                  <img src="/path-to-pie-chart.png" alt="Pie Chart" />
-                </div>
-              </div>
+              <h2 className="text-lg font-bold">No. of Assets</h2>
+              <p className="text-3xl font-semibold">317M</p>
+              <p className="text-sm text-gray-500">#1 Ranking</p>
+            </div>
+
+            {/* Estimated Revenue Card */}
+            <div className="p-4 bg-white rounded-lg shadow-md">
+              <h2 className="text-lg font-bold"> Ticket size</h2>
+              <p className="text-3xl font-semibold">10%</p>
+              <p className="text-sm text-green-500">+ $379K this month</p>
+            </div>
+
+            {/* Total Views Card */}
+            <div className="p-4 bg-white rounded-lg shadow-md">
+              <h2 className="text-lg font-bold">Agreed ROI</h2>
+              <button class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center m-2">
+  <svg class="fill-current w-4 h-4 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M13 8V2H7v6H2l8 8 8-8h-5zM0 18h20v2H0v-2z"/></svg>
+  <span>Download</span>
+</button>
             </div>
           </div>
+          <h1 className='text-3xl font-semibold m-6'>Latest Updates</h1>
+        <StatsTable/>
+        
         </main>
 
         {/* ... (rest of the code remains unchanged) ... */}

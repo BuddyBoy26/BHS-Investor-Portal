@@ -10,6 +10,11 @@ import Asset from "./Asset";
 import Investment from "./Investment";
 import NavBar from "./NavBar";
 import Dashboard from "./Dashboard";
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> b0ccbed (investment ready 2)
 const App = () => {
   return (
     <>
@@ -28,6 +33,7 @@ const App = () => {
             <Route path="/investment" element={<Investment />} />
             <Route path="/asset" element={<Asset />} />
             <Route path="/help" element={<Help />} />
+            
           </Routes>
         </div>
       </BrowserRouter>
