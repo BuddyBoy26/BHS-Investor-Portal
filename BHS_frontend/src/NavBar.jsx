@@ -12,7 +12,7 @@ const NavBar = () => {
   const largeTextButtonStyle = "text-lg !important"; // Inline style to enforce larger text
 
   return (
-    <nav className="sticky z-40 h-16 inset-x-0 top-0 w-full border-b border-gray-200 bg-white/75 backdrop-blur-lg transition-all">
+    <nav className="sticky z-40 h-16 inset-x-0 top-0 w-full border-b bg-white  transition-all">
       <div className="flex items-center h-full px-4 justify-between w-full">
         <RouteLink to="/" className="flex z-40 font-semibold items-center">
           <img className="h-14" src="logo_2.png" />
@@ -20,63 +20,74 @@ const NavBar = () => {
         <div className="h-full flex items-center space-x-4 justify-end w-full">
           {User ? (
             <>
-              <RouteLink
-                to="/trips"
+            <RouteLink
+                to="/"
                 className={`${buttonVariants({
                   size: "sm",
                   variant: "ghost",
-                })} ${largeTextButtonStyle}`}
-                style={{ fontSize: '1.125rem' }} // Inline style as fallback
+                })} ${largeTextButtonStyle} border border-white hover:border-black`}
+                style={{ fontSize: '1.125rem' }}
               >
-                Trips
+                Dashboard 
               </RouteLink>
+              
               <RouteLink
                 to="/assets"
                 className={`${buttonVariants({
                   size: "sm",
                   variant: "ghost",
-                })} ${largeTextButtonStyle}`}
+                })} ${largeTextButtonStyle} border border-white hover:border-black`}
                 style={{ fontSize: '1.125rem' }}
               >
                 Assets
               </RouteLink>
               <RouteLink
-                to="/"
+                to="/trips"
                 className={`${buttonVariants({
                   size: "sm",
                   variant: "ghost",
-                })} ${largeTextButtonStyle}`}
-                style={{ fontSize: '1.125rem' }}
+                })} ${largeTextButtonStyle} border border-white hover:border-black`}
+                style={{ fontSize: '1.125rem' }} // Inline style as fallback
               >
-                Dashboard 
+                Trips
               </RouteLink>
+              
+              <div className="group">
               <RouteLink
-                to="/contact"
-                className={`${buttonVariants({
-                  size: "sm",
-                  variant: "ghost",
-                })} ${largeTextButtonStyle}`}
-                style={{ fontSize: '1.125rem' }}
-              >
-                Contact Us 
-              </RouteLink>
-              <RouteLink
+  to="/contact"
+  className={`${buttonVariants({
+    size: "sm",
+    variant: "ghost",
+  })} ${largeTextButtonStyle} border border-white hover:border-black`}
+  style={{ fontSize: '1.125rem' }} // Inline style as fallback
+>
+  Contact Us
+</RouteLink>
+<RouteLink
                 to="/guide"
                 className={`${buttonVariants({
                   size: "sm",
                   variant: "ghost",
-                })} ${largeTextButtonStyle}`}
+                })} ${largeTextButtonStyle} border border-white hover:border-black`}
                 style={{ fontSize: '1.125rem' }}
               >
                 Guide 
               </RouteLink>
+
+  
+</div>
+
+
+
+
+              
               <div className="h-8 w-px bg-zinc-200 hidden sm:block" />
 
               <RouteLink
                 to="/profile"
                 className={`${buttonVariants({
                   size: "lg",
-                })} hidden sm:flex items-center gap-1 bg-gray-200 ${largeTextButtonStyle}`}
+                })} hidden sm:flex items-center gap-1 bg-gray-200 ${largeTextButtonStyle} border border-white hover:border-black`}
                 style={{ fontSize: '1.125rem' }}
               >
                 {user.username}
@@ -93,7 +104,7 @@ const NavBar = () => {
                 className={`${buttonVariants({
                   size: "sm",
                   variant: "ghost",
-                })} ${largeTextButtonStyle}`}
+                })} ${largeTextButtonStyle} border border-white hover:border-black`}
                 style={{ fontSize: '1.125rem' }}
               >
                 Contact Us 
@@ -104,7 +115,7 @@ const NavBar = () => {
                 className={`${buttonVariants({
                   size: "sm",
                   variant: "outline",
-                })} ${largeTextButtonStyle} border-black text-black bg-white hover:bg-gray-100`}
+                })} ${largeTextButtonStyle} border-black text-black bg-white hover:bg-gray-200`}
                 style={{ fontSize: '1.125rem' }}
               >
                 Sign up
@@ -115,7 +126,7 @@ const NavBar = () => {
                 className={`${buttonVariants({
                   size: "sm",
                   variant: "default",
-                })} ${largeTextButtonStyle} border-black  bg-gray-700 text-white hover:bg-gray-300`}
+                })} ${largeTextButtonStyle} border-black  bg-gray-700 text-white hover:bg-gray-300 hover:text-black`}
                 style={{ fontSize: '1.125rem' }}
               >
                 Login
