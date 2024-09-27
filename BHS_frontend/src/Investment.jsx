@@ -92,28 +92,28 @@ const Investment = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 m-6">
             {/* Views Card */}
             <div className="p-4 bg-white rounded-lg shadow-md">
-              <h2 className="text-lg font-bold">Investment Value</h2>
+              <h2 className="text-lg font-bold"> Current Investment Value</h2>
               <p className="text-3xl font-semibold">1.88B</p>
               <p className="text-sm text-green-500">+108M in 28 Days</p>
             </div>
 
             {/* Subscribers Card */}
             <div className="p-4 bg-white rounded-lg shadow-md">
-              <h2 className="text-lg font-bold">No. of Assets</h2>
+              <h2 className="text-lg font-bold">Agreed ROI</h2>
               <p className="text-3xl font-semibold">317M</p>
               <p className="text-sm text-gray-500">#1 Ranking</p>
             </div>
 
             {/* Estimated Revenue Card */}
             <div className="p-4 bg-white rounded-lg shadow-md">
-              <h2 className="text-lg font-bold"> Ticket size</h2>
+              <h2 className="text-lg font-bold"> No. of Trips</h2>
               <p className="text-3xl font-semibold">10%</p>
               <p className="text-sm text-green-500">+ $379K this month</p>
             </div>
 
             {/* Total Views Card */}
             <div className="p-4 bg-white rounded-lg shadow-md">
-              <h2 className="text-lg font-bold">Agreed ROI</h2>
+              <h2 className="text-lg font-bold">Download Contract</h2>
               <button class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center m-2">
   <svg class="fill-current w-4 h-4 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M13 8V2H7v6H2l8 8 8-8h-5zM0 18h20v2H0v-2z"/></svg>
   <span>Download</span>
