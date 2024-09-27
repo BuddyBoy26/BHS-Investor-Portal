@@ -72,6 +72,7 @@ const NavBar = () => {
                 style={{ fontSize: '1.125rem' }}
               >
                 Guide 
+
                 
               </RouteLink>
 
