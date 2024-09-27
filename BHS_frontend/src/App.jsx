@@ -42,6 +42,7 @@ const App = () => {
         
             
 >>>>>>> Stashed changes */}
+
             <Route path="/trips" element={<Trips />} />
             <Route path="/contact" element={<ContactForm />} />
             <Route path="/guide" element={<GuidePage />} />
