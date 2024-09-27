@@ -5,7 +5,6 @@ import Profile from "./Profile";
 import Assets from "./Assets";
 import Contract from "./Contract";
 import Logout from "./userAuth/Logout";
-import Help from "./help";
 import Asset from "./Asset";
 import Investment from "./Investment";
 import NavBar from "./NavBar";
@@ -13,7 +12,7 @@ import NavBar from "./NavBar";
 // import Trips from "./Trips";
 // =======
 // >>>>>>> Stashed changes
-import ContactForm from "./contact";
+import ContactForm from "./Contact";
 import GuidePage from "./Guide";
 import Trips from "./Trips"
 // <<<<<<< HEAD
