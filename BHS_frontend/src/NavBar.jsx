@@ -7,14 +7,14 @@ const NavBar = () => {
     username: "John Doe",
     avatar: "user.jpg",
   }
-  let User = true;
+  let User = false;
   
   const largeTextButtonStyle = "text-lg !important"; // Inline style to enforce larger text
 
   return (
     <nav className="sticky z-40 h-16 inset-x-0 top-0 w-full border-b border-gray-200 bg-white/75 backdrop-blur-lg transition-all">
       <div className="flex items-center h-full px-4 justify-between w-full">
-        <RouteLink to="/investment" className="flex z-40 font-semibold items-center">
+        <RouteLink to="/" className="flex z-40 font-semibold items-center">
           <img className="h-14" src="logo_2.png" />
         </RouteLink>
         <div className="h-full flex items-center space-x-4 justify-end w-full">
@@ -41,7 +41,7 @@ const NavBar = () => {
                 Assets
               </RouteLink>
               <RouteLink
-                to="/investment"
+                to="/"
                 className={`${buttonVariants({
                   size: "sm",
                   variant: "ghost",
@@ -49,6 +49,16 @@ const NavBar = () => {
                 style={{ fontSize: '1.125rem' }}
               >
                 Dashboard 
+              </RouteLink>
+              <RouteLink
+                to="/contact"
+                className={`${buttonVariants({
+                  size: "sm",
+                  variant: "ghost",
+                })} ${largeTextButtonStyle}`}
+                style={{ fontSize: '1.125rem' }}
+              >
+                Contact Us 
               </RouteLink>
               <div className="h-8 w-px bg-zinc-200 hidden sm:block" />
 
@@ -64,12 +74,27 @@ const NavBar = () => {
             </>
           ) : (
             <>
+             
+
+             
+            
               <RouteLink
-                to="/signup"
+                to="/contact"
                 className={`${buttonVariants({
                   size: "sm",
                   variant: "ghost",
                 })} ${largeTextButtonStyle}`}
+                style={{ fontSize: '1.125rem' }}
+              >
+                Contact Us 
+              </RouteLink>
+              <div className="h-8 w-px bg-zinc-200 hidden sm:block" />
+              <RouteLink
+                to="/signup"
+                className={`${buttonVariants({
+                  size: "sm",
+                  variant: "outline",
+                })} ${largeTextButtonStyle} border-black text-black bg-white hover:bg-gray-100`}
                 style={{ fontSize: '1.125rem' }}
               >
                 Sign up
@@ -79,24 +104,11 @@ const NavBar = () => {
                 to="/login"
                 className={`${buttonVariants({
                   size: "sm",
-                  variant: "ghost",
-                })} ${largeTextButtonStyle}`}
+                  variant: "default",
+                })} ${largeTextButtonStyle} border-black  bg-gray-700 text-white hover:bg-gray-300`}
                 style={{ fontSize: '1.125rem' }}
               >
                 Login
-              </RouteLink>
-
-              <div className="h-8 w-px bg-zinc-200 hidden sm:block" />
-
-              <RouteLink
-                to="/configure/upload"
-                className={`${buttonVariants({
-                  size: "lg",
-                })} hidden sm:flex items-center gap-1 bg-gray-200 ${largeTextButtonStyle}`}
-                style={{ fontSize: '1.125rem' }}
-              >
-                Contact Us
-                {/* <ArrowRight className="ml-1.5 h-5 w-5" /> */}
               </RouteLink>
             </>
           )}
