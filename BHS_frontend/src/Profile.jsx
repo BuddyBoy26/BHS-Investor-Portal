@@ -13,6 +13,19 @@ const user = {
 };
 
 function Profile() {
+  const convertDate = (dateStr) => {
+    const [day, month, year] = dateStr.split("/");
+    const date = new Date(`${year}-${month}-${day}`);
+
+    // Format the date using Intl.DateTimeFormat
+    const formattedDate = new Intl.DateTimeFormat("en-GB", {
+      day: "numeric",
+      month: "long",
+      year: "numeric",
+    }).format(date);
+
+    return formattedDate;
+  };
   return (
     <div className="bg-gray-100 min-h-screen py-8">
       <div className="lg:w-2/3 mx-auto flex flex-col bg-white shadow-md rounded-lg p-6 items-center content-center my-4">
@@ -60,7 +73,7 @@ function Profile() {
 
             <div className="border-b py-2">
               <p className="font-medium text-gray-800">Birthday</p>
-              <p className="text-gray-600">November 18, 2002</p>
+              <p className="text-gray-600">{convertDate(user.DOB)}</p>
             </div>
 
             <div className="py-2">
