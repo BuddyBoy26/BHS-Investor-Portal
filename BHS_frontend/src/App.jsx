@@ -9,8 +9,13 @@ import Help from "./help";
 import Asset from "./Asset";
 import Investment from "./Investment";
 import NavBar from "./NavBar";
+<<<<<<< Updated upstream
 import Trips from "./Trips";
+=======
+>>>>>>> Stashed changes
 import ContactForm from "./contact";
+import GuidePage from "./Guide";
+import Trips from "./Trips"
 // <<<<<<< HEAD
 // =======
 
@@ -32,8 +37,15 @@ const App = () => {
             <Route path="/contract" element={<Contract />} />
             <Route path="/asset" element={<Asset />} />
             <Route path="/help" element={<Help />} />
+<<<<<<< Updated upstream
             <Route path="/trips" element={<Trips />} />
             <Route path="/contact" element={<ContactForm />} />
+=======
+          <Route path="/trips" element={<Trips />} />
+            <Route path="/contact" element={<ContactForm />} />
+            <Route path="/guide" element={<GuidePage />} />
+            
+>>>>>>> Stashed changes
           </Routes>
         </div>
       </BrowserRouter>

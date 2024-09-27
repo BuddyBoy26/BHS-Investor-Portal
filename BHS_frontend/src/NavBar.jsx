@@ -7,7 +7,7 @@ const NavBar = () => {
     username: "John Doe",
     avatar: "user.jpg",
   }
-  let User = false;
+  let User = true;
   
   const largeTextButtonStyle = "text-lg !important"; // Inline style to enforce larger text
 
@@ -59,6 +59,16 @@ const NavBar = () => {
                 style={{ fontSize: '1.125rem' }}
               >
                 Contact Us 
+              </RouteLink>
+              <RouteLink
+                to="/contact"
+                className={`${buttonVariants({
+                  size: "sm",
+                  variant: "ghost",
+                })} ${largeTextButtonStyle}`}
+                style={{ fontSize: '1.125rem' }}
+              >
+                Guide 
               </RouteLink>
               <div className="h-8 w-px bg-zinc-200 hidden sm:block" />
 
