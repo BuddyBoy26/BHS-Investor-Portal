@@ -1,8 +1,6 @@
-import React, { useState } from "react";
-import { ChevronDown, ChevronUp } from "lucide-react";
+import React from "react";
 
 const AssetPageTables = () => {
-  const [showAll, setShowAll] = useState(false);
   const data = [
     {
       day: "A1223",
@@ -114,70 +112,60 @@ const AssetPageTables = () => {
     },
   ];
 
-  const visibleData = showAll ? data : data.slice(0, 5);
-
   return (
     <div className="container mx-auto px-4 py-8 w-5/6">
-      <div className="overflow-hidden shadow-2xl rounded-lg">
-        <table className="table-auto w-full text-sm bg-white rounded-lg">
-          <thead>
-            <tr className="bg-gray-100 text-left">
-              <th className="px-4 py-3 font-semibold">Vehicle Number</th>
-              <th className="px-4 py-3 font-semibold">Date</th>
-              <th className="px-4 py-3 font-semibold">Subs Change</th>
-              <th className="px-4 py-3 font-semibold">Subs Total</th>
-              <th className="px-4 py-3 font-semibold">Views Change</th>
-              <th className="px-4 py-3 font-semibold">Views Total</th>
-              <th className="px-4 py-3 font-semibold">Revenue Range</th>
-            </tr>
-          </thead>
-          <tbody>
-            {visibleData.map((item, index) => (
-              <tr
-                key={index}
-                className="border-b hover:bg-gray-50 transition-colors duration-200"
-              >
-                <td className="px-4 py-3">{item.day}</td>
-                <td className="px-4 py-3">{item.date}</td>
-                <td
-                  className={`px-4 py-3 ${
-                    item.subsChange ? "text-green-500 font-semibold" : ""
-                  }`}
-                >
-                  {item.subsChange || "-"}
-                </td>
-                <td className="px-4 py-3">{item.subsTotal}</td>
-                <td
-                  className={`px-4 py-3 ${
-                    item.viewsChange ? "text-green-500" : ""
-                  }`}
-                >
-                  {item.viewsChange}
-                </td>
-                <td className="px-4 py-3">{item.viewsTotal}</td>
-                <td className="px-4 py-3">{item.revenueRange || "-"}</td>
+      <div className="shadow-2xl">
+        {/* Table wrapper */}
+        <div className="relative max-h-10">
+          {/* Fixed table header */}
+          <table className="table-auto w-full text-sm bg-white rounded-lg">
+            <thead className="sticky top-0 bg-gray-300 z-10">
+              <tr className="text-left">
+                <th className="px-4 py-3 font-semibold">Vehicle Number</th>
+                <th className="px-4 py-3 font-semibold">Date</th>
+                <th className="px-4 py-3 font-semibold">Subs Change</th>
+                <th className="px-4 py-3 font-semibold">Subs Total</th>
+                <th className="px-4 py-3 font-semibold">Views Change</th>
+                <th className="px-4 py-3 font-semibold">Views Total</th>
+                <th className="px-4 py-3 font-semibold">Revenue Range</th>
               </tr>
-            ))}
-          </tbody>
-        </table>
-        {data.length > 5 && (
-          <div className="flex justify-center p-4 bg-gray-50">
-            <button
-              onClick={() => setShowAll(!showAll)}
-              className="flex items-center px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition-colors duration-200"
-            >
-              {showAll ? (
-                <>
-                  View Less <ChevronUp className="ml-2 h-4 w-4" />
-                </>
-              ) : (
-                <>
-                  View More <ChevronDown className="ml-2 h-4 w-4" />
-                </>
-              )}
-            </button>
+            </thead>
+          </table>
+
+          {/* Scrollable table body */}
+          <div className="overflow-y-auto custom-scrollbar max-h-96">
+            <table className="table-auto w-full text-sm bg-white rounded-lg">
+              <tbody>
+                {data.map((item, index) => (
+                  <tr
+                    key={index}
+                    className="border-b hover:bg-gray-50 transition-colors duration-200"
+                  >
+                    <td className="px-4 py-3">{item.day}</td>
+                    <td className="px-4 py-3">{item.date}</td>
+                    <td
+                      className={`px-4 py-3 ${
+                        item.subsChange ? "text-green-500 font-semibold" : ""
+                      }`}
+                    >
+                      {item.subsChange || "-"}
+                    </td>
+                    <td className="px-4 py-3">{item.subsTotal}</td>
+                    <td
+                      className={`px-4 py-3 ${
+                        item.viewsChange ? "text-green-500" : ""
+                      }`}
+                    >
+                      {item.viewsChange}
+                    </td>
+                    <td className="px-4 py-3">{item.viewsTotal}</td>
+                    <td className="px-4 py-3">{item.revenueRange || "-"}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
           </div>
-        )}
+        </div>
       </div>
     </div>
   );
