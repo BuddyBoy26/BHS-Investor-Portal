@@ -1,61 +1,73 @@
 import React from "react";
+import { motion } from "framer-motion";
 
 const Login = () => {
   return (
-    <div className="bg-yellow-300 h-[calc(100vh-64px)] flex items-center justify-center">
-      <div className="bg-white shadow-lg rounded-lg p-10 w-2/3 mx-auto flex justify-center items-center">
-        <div className="w-1/2 pr-8">
+    <div className="h-[calc(100vh-64px)] flex items-center justify-center p-4 bg-gradient-to-br from-blue-50 to-indigo-100">
+      <motion.div 
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+        className="bg-white shadow-2xl rounded-3xl p-8 w-full max-w-4xl mx-auto flex flex-col md:flex-row justify-between items-center"
+      >
+        <div className="w-full md:w-2/5 mb-8 md:mb-0 flex flex-col items-center justify-center">
           <div className="text-center mb-8">
-            <h1 className="text-4xl font-bold">Welcome to</h1>
-            <h2 className="text-3xl font-semibold">Bhavya Haulage Services</h2>
+            <h1 className="text-4xl font-bold text-gray-800">Welcome to</h1>
+            <h2 className="text-3xl font-semibold text-[#EBB251]">Bhavya Haulage Services</h2>
           </div>
-          <img src="logo_bhavya.png" />
+          <img src="logo_bhavya.png" alt="Bhavya Haulage Services Logo" className="w-48 h-48 object-contain" />
         </div>
-        <div className="lg:w-2/5 pl-8 h-full">
-          <div className="bg-gray-100 p-8 rounded-xl shadow-lg">
-            <h3 className="text-2xl font-bold mb-4 text-center">
-              Investors' Login
+        <div className="w-full md:w-3/5 md:pl-8">
+          <motion.div 
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="bg-gray-50 p-8 rounded-2xl shadow-lg"
+          >
+            <h3 className="text-2xl font-bold mb-6 text-center text-gray-800">
+              Investor's Login
             </h3>
-            <form>
-              <div className="mb-4">
-                <label className="block font-semibold pb-1.5 pl-1.5">
+            <form className="space-y-4">
+              <div>
+                <label className="block text-black mb-1 pl-1 font-bold">
                   Email ID
                 </label>
                 <input
-                  type="text"
-                  className="w-full px-4 py-1.5 rounded-lg border-0 focus:outline-none focus:ring-2 focus:ring-yellow-500"
-                  placeholder="Enter your Email ID"
+                  type="email"
+                  className="w-full px-4 py-2 rounded-xl border-2 border-white bg-white focus:outline-none focus:border-[#EBB251] transition duration-200"
+                  placeholder="Enter your email"
                 />
               </div>
-              <div className="mb-4">
-                <label className="block pb-1.5 pl-1.5 font-semibold">
+              <div>
+                <label className="block text-black mb-1 pl-1 font-bold">
                   Password
                 </label>
                 <input
                   type="password"
-                  className="w-full px-4 py-1.5 border-0 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500"
+                  className="w-full px-4 py-2 rounded-xl border-2 border-white bg-white focus:outline-none focus:border-[#EBB251] transition duration-200"
                   placeholder="Enter your password"
                 />
               </div>
-              <div className="w-full flex justify-center mt-10">
-                <button
-                  type="submit"
-                  className="w-1/3 object-center  bg-[#00D816] text-white py-2 rounded-lg hover:bg-green-600"
-                >
-                  Login
-                </button>
-              </div>
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                type="submit"
+                className="w-full bg-[#EBB251] text-white text-lg py-2 rounded-xl hover:bg-[#EBB251] transition duration-300 mt-6"
+              >
+                Login
+              </motion.button>
             </form>
-            <div className="text-center mt-4">
-              <p>
-                <a href="/signup" className="text-blue-500 hover:underline">
-                  Don't have an account?Sign up
+            <div className="text-center mt-6">
+              <p className="text-gray-600">
+                Don't have an account?{" "}
+                <a href="/signup" className="text-[#EBB251] hover:underline font-medium">
+                  Sign up here
                 </a>
               </p>
             </div>
-          </div>
+          </motion.div>
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 };
