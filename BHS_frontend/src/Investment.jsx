@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 import { jsPDF } from 'jspdf';
 import StatsTable from './StatsTable';
+
 const Investment = () => {
   const [data, setData] = useState([]);
 
@@ -44,91 +45,60 @@ const Investment = () => {
     doc.text('Investment Amount: $100,000', 20, 70);
     doc.save('investment-contract.pdf');
   };
-  //
+
   return (
-    <div className="flex bg-gray-100 ">
-      <div className="flex-1 flex flex-col mx-8 sm:mx-12 lg:mx-16">
+    <div className="bg-gray-100 min-h-screen">
+      <div className="container mx-auto px-4 py-8">
         {/* Profile Section */}
-        <div className="flex items-center mt-8 mb-6 m-6">
-          <div className='pl-3'>
-            <h2 className="text-3xl font-bold">Hello, John Doe</h2>
-            <p className="text-gray-500 text-lg">Investment ID</p>
-          </div>
+        <div className="mb-8">
+          <h2 className="text-2xl sm:text-3xl font-bold">Hello, John Doe</h2>
+          <p className="text-gray-500 text-base sm:text-lg">Investment ID</p>
         </div>
 
-        <main className="flex-1">
-          
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 m-6">
-            {/* Views Card */}
-            <div className="p-4 bg-white rounded-lg shadow-md">
-              <h2 className="text-lg font-bold">Investment Value</h2>
-              <p className="text-3xl font-semibold">1.88B</p>
-              <p className="text-sm text-green-500">+108M in 28 Days</p>
-            </div>
-
-            {/* Subscribers Card */}
-            <div className="p-4 bg-white rounded-lg shadow-md">
-              <h2 className="text-lg font-bold">No. of Assets</h2>
-              <p className="text-3xl font-semibold">317M</p>
-              <p className="text-sm text-gray-500">#1 Ranking</p>
-            </div>
-
-            {/* Estimated Revenue Card */}
-            <div className="p-4 bg-white rounded-lg shadow-md">
-              <h2 className="text-lg font-bold"> Ticket size</h2>
-              <p className="text-3xl font-semibold">10%</p>
-              <p className="text-sm text-green-500">+ $379K this month</p>
-            </div>
-
-            {/* Total Views Card */}
-            <div className="p-4 bg-white rounded-lg shadow-md">
-              <h2 className="text-lg font-bold">Agreed ROI</h2>
-              <button class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center m-2">
-  <svg class="fill-current w-4 h-4 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M13 8V2H7v6H2l8 8 8-8h-5zM0 18h20v2H0v-2z"/></svg>
-  <span>Download</span>
-</button>
-            </div>
+        <main>
+          {/* First row of cards */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+            <Card title="Investment Value" value="1.88B" subtext="+108M in 28 Days" subtextColor="text-green-500" />
+            <Card title="No. of Assets" value="317M" subtext="#1 Ranking" subtextColor="text-gray-500" />
+            <Card title="Ticket size" value="10%" subtext="+ $379K this month" subtextColor="text-green-500" />
+            <Card title="Agreed ROI" button={<DownloadButton onClick={downloadPDF} />} />
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 m-6">
-            {/* Views Card */}
-            <div className="p-4 bg-white rounded-lg shadow-md">
-              <h2 className="text-lg font-bold"> Current Investment Value</h2>
-              <p className="text-3xl font-semibold">1.88B</p>
-              <p className="text-sm text-green-500">+108M in 28 Days</p>
-            </div>
 
-            {/* Subscribers Card */}
-            <div className="p-4 bg-white rounded-lg shadow-md">
-              <h2 className="text-lg font-bold">Agreed ROI</h2>
-              <p className="text-3xl font-semibold">317M</p>
-              <p className="text-sm text-gray-500">#1 Ranking</p>
-            </div>
-
-            {/* Estimated Revenue Card */}
-            <div className="p-4 bg-white rounded-lg shadow-md">
-              <h2 className="text-lg font-bold"> No. of Trips</h2>
-              <p className="text-3xl font-semibold">10%</p>
-              <p className="text-sm text-green-500">+ $379K this month</p>
-            </div>
-
-            {/* Total Views Card */}
-            <div className="p-4 bg-white rounded-lg shadow-md">
-              <h2 className="text-lg font-bold">Download Contract</h2>
-              <button class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center m-2">
-  <svg class="fill-current w-4 h-4 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M13 8V2H7v6H2l8 8 8-8h-5zM0 18h20v2H0v-2z"/></svg>
-  <span>Download</span>
-</button>
-            </div>
+          {/* Second row of cards */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+            <Card title="Current Investment Value" value="1.88B" subtext="+108M in 28 Days" subtextColor="text-green-500" />
+            <Card title="Agreed ROI" value="317M" subtext="#1 Ranking" subtextColor="text-gray-500" />
+            <Card title="No. of Trips" value="10%" subtext="+ $379K this month" subtextColor="text-green-500" />
+            <Card title="Download Contract" button={<DownloadButton onClick={downloadContract} />} />
           </div>
-          <h1 className='text-3xl font-semibold m-6'>Latest Updates</h1>
-        <StatsTable/>
-        
+
+          <h1 className='text-2xl sm:text-3xl font-semibold mb-6'>Latest Updates</h1>
+          <StatsTable />
         </main>
-
-        {/* ... (rest of the code remains unchanged) ... */}
       </div>
     </div>
   );
 };
+
+const Card = ({ title, value, subtext, subtextColor, button }) => (
+  <div className="p-4 bg-white rounded-lg shadow-md">
+    <h2 className="text-lg font-bold mb-2">{title}</h2>
+    {value && <p className="text-2xl sm:text-3xl font-semibold">{value}</p>}
+    {subtext && <p className={`text-sm ${subtextColor}`}>{subtext}</p>}
+    {button}
+  </div>
+);
+
+const DownloadButton = ({ onClick }) => (
+  <button 
+    onClick={onClick}
+    className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center mt-2"
+  >
+    <svg className="fill-current w-4 h-4 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+      <path d="M13 8V2H7v6H2l8 8 8-8h-5zM0 18h20v2H0v-2z"/>
+    </svg>
+    <span>Download</span>
+  </button>
+);
 
 export default Investment;

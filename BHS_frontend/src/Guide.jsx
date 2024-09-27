@@ -99,15 +99,7 @@ const GuidePage = () => {
       ],
       link: "/contact"
     },
-    {
-      title: "Login & Logout",
-      icon: <LogIn className="w-6 h-6 text-orange-500" />,
-      content: [
-        "Securely log in and out of your account",
-        "Always ensure you log out after completing your session for your security"
-      ],
-      link: "/login"
-    }
+    
   ];
 
   return (

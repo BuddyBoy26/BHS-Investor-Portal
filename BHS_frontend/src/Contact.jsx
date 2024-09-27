@@ -3,82 +3,40 @@ import { Map, Phone, Mail } from 'lucide-react';
 
 const ContactForm = () => {
   return (
-    <div className="bg-gradient-to-br from-blue-50 to-indigo-100 min-h-screen">
+    <div className="bg-gradient-to-br from-blue-50 to-indigo-100 min-h-screen px-4 py-8 sm:py-16">
       {/* Feature Boxes */}
-      <div className="container mx-auto px-4 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div className="bg-white rounded-lg shadow-lg p-8">
-            <div className="text-indigo-500 w-16 h-16 mx-auto mb-4">
-              <Map size={64} />
-            </div>
-            <h3 className=" font-semibold text-center mb-2 text-xl">Find Us</h3>
-            <p className="text-gray-600 text-center text-lg">Oﬃce 1420 - JAFZA 1 Tower, P.O. Box 124707 Jebel Ali Freezone, Dubai - U.A.E</p>
-          </div>
-          <div className="bg-white rounded-lg shadow-lg p-8">
-            <div className="text-indigo-500 w-16 h-16 mx-auto mb-4">
-              <Phone size={64} />
-            </div>
-            <h3 className=" font-semibold text-center mb-2 text-xl"> Call Us</h3>
-            <p className="text-gray-600 text-center text-xl">+971 54 402 2577</p>
-          </div>
-          <div className="bg-white rounded-lg shadow-lg p-8">
-            <div className="text-indigo-500 w-16 h-16 mx-auto mb-4">
-              <Mail size={64} />
-            </div>
-            <h3 className=" font-semibold text-center mb-2 text-xl">Mail</h3>
-            <p className="text-gray-600 text-center text-xl">info@bhavya.ae</p>
-          </div>
+      <div className="container mx-auto mb-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          <FeatureBox icon={<Map size={48} />} title="Find Us" content="Oﬃce 1420 - JAFZA 1 Tower, P.O. Box 124707 Jebel Ali Freezone, Dubai - U.A.E" />
+          <FeatureBox icon={<Phone size={48} />} title="Call Us" content="+971 54 402 2577" />
+          <FeatureBox icon={<Mail size={48} />} title="Mail" content="info@bhavya.ae" />
         </div>
       </div>
 
       {/* Contact Form */}
-      <div className=" py-16">
-        <div className="relative py-3 sm:max-w-xl sm:mx-auto">
-          <div
-            className="absolute inset-0 bg-gradient-to-r from-indigo-700 to-purple-500 shadow-lg transform -skew-y-6 sm:skew-y-0 sm:-rotate-6 sm:rounded-3xl">
-          </div>
-          <div className="text-white relative px-4 py-10 bg-indigo-400 shadow-lg sm:rounded-3xl sm:p-20">
+      <div className="container mx-auto max-w-md">
+        <div className="relative">
+          <div className="absolute inset-0 bg-gradient-to-r from-indigo-700 to-purple-500 shadow-lg transform -skew-y-6 sm:skew-y-0 sm:-rotate-6 sm:rounded-3xl"></div>
+          <div className="relative bg-indigo-400 shadow-lg sm:rounded-3xl px-6 py-10 sm:p-16">
             <div className="text-center pb-6">
-              <h1 className="text-3xl">Contact Us!</h1>
-              <p className="text-gray-300">
+              <h1 className="text-3xl text-white font-bold">Contact Us!</h1>
+              <p className="text-gray-200 mt-2">
                 Fill up the form below to send us a message.
               </p>
             </div>
-            <form>
-              <input
-                className="shadow mb-4 appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline rounded-t-3xl -my-6"
-                type="text"
-                placeholder="Name"
-                name="name"
-              />
-              <input
-                className="shadow mb-4 appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline rounded-b-3xl -my-6"
-                type="email"
-                placeholder="Email"
-                name="email"
-              />
-              <input
-                className="shadow mb-4 appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                type="text"
-                placeholder="Subject"
-                name="_subject"
-              />
+            <form className="space-y-6">
+              <InputField type="text" placeholder="Name" name="name" />
+              <InputField type="email" placeholder="Email" name="email" />
+              <InputField type="text" placeholder="Subject" name="_subject" />
               <textarea
-                className="shadow mb-4 min-h-0 appearance-none border rounded h-64 w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                className="w-full px-4 py-3 rounded-lg bg-indigo-50 text-gray-700 focus:outline-none focus:ring-2 focus:ring-indigo-600"
                 placeholder="Type your message here..."
                 name="message"
-                style={{ height: '121px' }}
+                rows="4"
               ></textarea>
               <div className="flex justify-between">
-                <input
-                  className="shadow bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-                  type="submit"
-                  value="Send ➤"
-                />
-                <input
-                  className="shadow bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-                  type="reset"
-                />
+                <FormButton type="submit" value="Send ➤" />
+                <FormButton type="reset" value="Reset" />
               </div>
             </form>
           </div>
@@ -87,5 +45,32 @@ const ContactForm = () => {
     </div>
   );
 };
+
+const FeatureBox = ({ icon, title, content }) => (
+  <div className="bg-white rounded-lg shadow-lg p-8">
+    <div className="text-indigo-500 w-16 h-16 mx-auto mb-4">
+      {icon}
+    </div>
+    <h3 className="font-semibold text-center mb-2 text-xl">{title}</h3>
+    <p className="text-gray-600 text-center text-lg">{content}</p>
+  </div>
+);
+
+const InputField = ({ type, placeholder, name }) => (
+  <input
+    className="w-full px-4 py-3 rounded-lg bg-indigo-50 text-gray-700 focus:outline-none focus:ring-2 focus:ring-indigo-600"
+    type={type}
+    placeholder={placeholder}
+    name={name}
+  />
+);
+
+const FormButton = ({ type, value }) => (
+  <input
+    className="px-6 py-3 bg-indigo-600 hover:bg-indigo-700 text-white font-bold rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+    type={type}
+    value={value}
+  />
+);
 
 export default ContactForm;

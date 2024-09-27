@@ -94,21 +94,21 @@ const StatsTable = () => {
         <table className="w-full text-sm bg-white">
           <thead>
             <tr className="bg-gray-800 text-white">
-              <th className="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">Time</th>
-              <th className="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">Truck</th>
-              <th className="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">Location</th>
-              <th className="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">Speed</th>
-              <th className="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">Trip Number</th>
+              <th className="px-4 py-2 text-left text-xs font-medium uppercase tracking-wider whitespace-nowrap">Time</th>
+              <th className="px-4 py-2 text-left text-xs font-medium uppercase tracking-wider whitespace-nowrap">Truck</th>
+              <th className="px-4 py-2 text-left text-xs font-medium uppercase tracking-wider whitespace-nowrap">Location</th>
+              <th className="px-4 py-2 text-left text-xs font-medium uppercase tracking-wider whitespace-nowrap">Speed</th>
+              <th className="px-4 py-2 text-left text-xs font-medium uppercase tracking-wider whitespace-nowrap">Trip Number</th>
             </tr>
           </thead>
           <tbody className="divide-y divide-gray-200">
             {data.map((item, index) => (
               <tr key={index} className={index % 2 === 0 ? 'bg-gray-50' : 'bg-white'}>
-                <td className="px-6 py-4 whitespace-nowrap">{item.time}</td>
-                <td className="px-6 py-4 whitespace-nowrap">{item.truck}</td>
-                <td className="px-6 py-4 whitespace-nowrap">{item.location}</td>
-                <td className="px-6 py-4 whitespace-nowrap">{item.speed}</td>
-                <td className="px-6 py-4 whitespace-nowrap">{item.tripNumber}</td>
+                <td className="px-4 py-2 whitespace-nowrap">{item.time}</td>
+                <td className="px-4 py-2 whitespace-nowrap">{item.truck}</td>
+                <td className="px-4 py-2 whitespace-nowrap">{item.location}</td>
+                <td className="px-4 py-2 whitespace-nowrap">{item.speed}</td>
+                <td className="px-4 py-2 whitespace-nowrap">{item.tripNumber}</td>
               </tr>
             ))}
           </tbody>
