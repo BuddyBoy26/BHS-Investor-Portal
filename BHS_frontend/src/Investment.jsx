@@ -44,9 +44,9 @@ const Investment = () => {
     doc.text('Investment Amount: $100,000', 20, 70);
     doc.save('investment-contract.pdf');
   };
-
+  //
   return (
-    <div className="flex bg-gray-100">
+    <div className="flex bg-gray-100 ">
       <div className="flex-1 flex flex-col mx-8 sm:mx-12 lg:mx-16">
         {/* Profile Section */}
         <div className="flex items-center mt-8 mb-6 m-6">

@@ -3,7 +3,7 @@ import { Map, Phone, Mail } from 'lucide-react';
 
 const ContactForm = () => {
   return (
-    <div className="bg-gray-100 min-h-screen">
+    <div className="bg-gradient-to-br from-blue-50 to-indigo-100 min-h-screen">
       {/* Feature Boxes */}
       <div className="container mx-auto px-4 py-16">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -11,28 +11,28 @@ const ContactForm = () => {
             <div className="text-indigo-500 w-16 h-16 mx-auto mb-4">
               <Map size={64} />
             </div>
-            <h3 className="text-xl font-semibold text-center mb-2">Find Us</h3>
-            <p className="text-gray-600 text-center">Oﬃce 1420 - JAFZA 1 Tower, P.O. Box 124707 Jebel Ali Freezone, Dubai - U.A.E</p>
+            <h3 className=" font-semibold text-center mb-2 text-xl">Find Us</h3>
+            <p className="text-gray-600 text-center text-lg">Oﬃce 1420 - JAFZA 1 Tower, P.O. Box 124707 Jebel Ali Freezone, Dubai - U.A.E</p>
           </div>
           <div className="bg-white rounded-lg shadow-lg p-8">
             <div className="text-indigo-500 w-16 h-16 mx-auto mb-4">
               <Phone size={64} />
             </div>
-            <h3 className="text-xl font-semibold text-center mb-2">Feel Free to Call Us</h3>
-            <p className="text-gray-600 text-center">+971 54 402 2577</p>
+            <h3 className=" font-semibold text-center mb-2 text-xl"> Call Us</h3>
+            <p className="text-gray-600 text-center text-xl">+971 54 402 2577</p>
           </div>
           <div className="bg-white rounded-lg shadow-lg p-8">
             <div className="text-indigo-500 w-16 h-16 mx-auto mb-4">
               <Mail size={64} />
             </div>
-            <h3 className="text-xl font-semibold text-center mb-2">Mail</h3>
-            <p className="text-gray-600 text-center">info@bhavya.ae</p>
+            <h3 className=" font-semibold text-center mb-2 text-xl">Mail</h3>
+            <p className="text-gray-600 text-center text-xl">info@bhavya.ae</p>
           </div>
         </div>
       </div>
 
       {/* Contact Form */}
-      <div className="bg-gray-100 py-16">
+      <div className=" py-16">
         <div className="relative py-3 sm:max-w-xl sm:mx-auto">
           <div
             className="absolute inset-0 bg-gradient-to-r from-indigo-700 to-purple-500 shadow-lg transform -skew-y-6 sm:skew-y-0 sm:-rotate-6 sm:rounded-3xl">

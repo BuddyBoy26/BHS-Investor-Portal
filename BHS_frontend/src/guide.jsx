@@ -15,17 +15,18 @@ const GuideSection = ({ title, icon, content, isOpen, toggle, link }) => (
     </button>
     {isOpen && (
       <div className="p-4 bg-gray-50">
+        <p className="text-gray-700 text-lg italic mb-3 px-4"> {title} allows you to access the following details:</p>
         <ul className="space-y-2">
           {content.map((item, index) => (
-            <li key={index} className="flex items-start">
-              <div className="flex-shrink-0 w-1.5 h-1.5 mt-2 rounded-full bg-blue-500 mr-2"></div>
-              <span>{item}</span>
+            <li key={index} className="flex items-start px-10">
+              <div className="flex-shrink-0 w-1.5 h-1.5 mt-2 rounded-full bg-blue-500 mr-2 "></div>
+              <span >{item}</span>
             </li>
           ))}
-          <li className="mt-4">
+          <li className="mt-4 px-4">
             <a
               href={link}
-              className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+              className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-black bg-gray-300 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 my-5"
             >
               Go to {title} <ExternalLink className="ml-2 h-4 w-4" />
             </a>
@@ -54,7 +55,7 @@ const GuidePage = () => {
         "Number of Trips So Far",
         "Currently Active Trucks"
       ],
-      link: "/"
+      link: "/dashboard"
     },
     {
       title: "Trips",
@@ -81,9 +82,6 @@ const GuidePage = () => {
       ],
       link: "/profile"
     },
-    
-    
-    
     {
       title: "Guide",
       icon: <HelpCircle className="w-6 h-6 text-teal-500" />,
@@ -136,7 +134,7 @@ const GuidePage = () => {
         </div>
         
         <div className="mt-12 p-6 bg-white rounded-lg shadow-lg border border-blue-200">
-          <p className="text-lg text-blue-800 font-medium">
+          <p className="text-lg text-black font-medium">
             By following this guide, you should have an easy time managing your investments and keeping track of your assets. Happy investing!
           </p>
         </div>

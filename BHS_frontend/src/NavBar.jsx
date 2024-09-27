@@ -61,7 +61,7 @@ const NavBar = () => {
                 Contact Us 
               </RouteLink>
               <RouteLink
-                to="/contact"
+                to="/guide"
                 className={`${buttonVariants({
                   size: "sm",
                   variant: "ghost",
