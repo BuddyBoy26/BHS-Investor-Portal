@@ -10,7 +10,7 @@ const Login = ({ isUser, setIsUser }) => {
     navigate("/", { replace: true });
   };
   return (
-    <div className="min-h-[calc(100vh-64px)] flex items-center justify-center p-8 bg-gradient-to-br from-blue-50 to-indigo-100">
+    <div className="min-h-[calc(100vh-64px)] flex items-center justify-center p-2 lg:p-8 md:p-8 bg-gradient-to-br from-blue-50 to-indigo-100">
       <motion.div
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
