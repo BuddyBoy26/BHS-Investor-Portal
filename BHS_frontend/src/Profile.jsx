@@ -5,7 +5,9 @@ import { Link as RouteLink } from "react-router-dom";
 const Card = ({ className, children }) => (
   <div className={`bg-white shadow-md rounded-lg ${className}`}>{children}</div>
 );
-const CardHeader = ({ children }) => <div className="p-4 border-b">{children}</div>;
+const CardHeader = ({ children }) => (
+  <div className="p-4 border-b">{children}</div>
+);
 const CardContent = ({ children }) => <div className="p-4">{children}</div>;
 
 const user = {
@@ -13,14 +15,17 @@ const user = {
   phone: 9748794406,
   email: "anta@gmail.com",
   DOB: "10/12/2005",
-  address: "Indian Institute of Technology Kharagpur 721302, West Bengal, India",
+  address:
+    "Indian Institute of Technology Kharagpur 721302, West Bengal, India",
   gender: "Male",
 };
 
 const ProfileCard = ({ title, children }) => (
   <Card className="w-full max-w-3xl mx-auto my-4">
     <CardHeader>
-      <h3 className="text-xl font-semibold text-gray-800 text-center">{title}</h3>
+      <h3 className="text-xl font-semibold text-gray-800 text-center">
+        {title}
+      </h3>
     </CardHeader>
     <CardContent>{children}</CardContent>
   </Card>
@@ -62,7 +67,11 @@ function Profile() {
         <div className="p-6 flex flex-col items-center">
           <ProfileCard title="Personal Information">
             <ProfileItem icon={User} label="Name" value={user.name} />
-            <ProfileItem icon={Cake} label="Birthday" value={convertDate(user.DOB)} />
+            <ProfileItem
+              icon={Cake}
+              label="Birthday"
+              value={convertDate(user.DOB)}
+            />
             <ProfileItem icon={User} label="Gender" value={user.gender} />
           </ProfileCard>
 
@@ -74,7 +83,7 @@ function Profile() {
 
           <ProfileCard title="Investment Information">
             <RouteLink
-              to="/investment"
+              to="/"
               className="inline-flex items-center justify-center w-full text-[#EBB251] hover:text-[#D9A344] transition-colors"
             >
               View investment details

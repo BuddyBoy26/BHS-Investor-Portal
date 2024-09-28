@@ -3,8 +3,8 @@ import { motion } from "framer-motion";
 
 const Signup = () => {
   return (
-    <div className="bg-gradient-to-br from-blue-50 to-indigo-100 h-[calc(100vh-64px)] flex items-center justify-center p-4">
-      <motion.div 
+    <div className="bg-gradient-to-br from-blue-50 to-indigo-100 min-h-[calc(100vh-64px)] flex items-center justify-center p-4">
+      <motion.div
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
@@ -13,12 +13,18 @@ const Signup = () => {
         <div className="w-full md:w-2/5 mb-8 md:mb-0 flex flex-col items-center justify-center">
           <div className="text-center mb-8">
             <h1 className="text-4xl font-bold text-gray-800">Welcome to</h1>
-            <h2 className="text-3xl font-semibold text-[#EBB251]">Bhavya Haulage Services</h2>
+            <h2 className="text-3xl font-semibold text-[#EBB251]">
+              Bhavya Haulage Services
+            </h2>
           </div>
-          <img src="logo_bhavya.png" alt="Bhavya Haulage Services Logo" className="w-48 h-48 object-contain" />
+          <img
+            src="logo_bhavya.png"
+            alt="Bhavya Haulage Services Logo"
+            className="w-48 h-48 object-contain"
+          />
         </div>
         <div className="w-full md:w-3/5 md:pl-8">
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
@@ -80,7 +86,10 @@ const Signup = () => {
             <div className="text-center mt-6">
               <p className="text-gray-600">
                 Already have an account?{" "}
-                <a href="/login" className="text-[#EBB251] hover:underline font-medium">
+                <a
+                  href="/login"
+                  className="text-[#EBB251] hover:underline font-medium"
+                >
                   Login here
                 </a>
               </p>
