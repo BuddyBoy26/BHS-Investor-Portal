@@ -6,10 +6,10 @@ const ContactForm = () => {
     <div className="bg-gradient-to-br from-blue-50 to-indigo-100 min-h-screen px-4 py-8 sm:py-16">
       {/* Feature Boxes */}
       <div className="text-center mb-12">
-        <h1 className="text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-amber-500 to-yellow-600 mb-2">
+        <h1 className="text-5xl font-extrabold text-transparent bg-clip-text bg-black mb-2">
           BHAVYA
         </h1>
-        <p className="text-2xl italic text-[#EBB251] font-semibold">
+        <p className="text-2xl italic  font-semibold">
           Haulage Services
         </p>
       </div>
