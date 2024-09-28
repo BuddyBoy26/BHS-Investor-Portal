@@ -21,20 +21,35 @@ const AssetsTable = ({ row, col, clickable = false }) => {
   };
 
   useEffect(() => {
-    const handleScroll = () => {
+    const handleBodyScroll = () => {
       if (tableHeaderRef.current && tableBodyRef.current) {
         tableHeaderRef.current.scrollLeft = tableBodyRef.current.scrollLeft;
       }
     };
 
+    const handleHeaderScroll = () => {
+      if (tableHeaderRef.current && tableBodyRef.current) {
+        tableBodyRef.current.scrollLeft = tableHeaderRef.current.scrollLeft;
+      }
+    };
+
     const tableBody = tableBodyRef.current;
+    const tableHeader = tableHeaderRef.current;
+
     if (tableBody) {
-      tableBody.addEventListener("scroll", handleScroll);
+      tableBody.addEventListener("scroll", handleBodyScroll);
+    }
+
+    if (tableHeader) {
+      tableHeader.addEventListener("scroll", handleHeaderScroll);
     }
 
     return () => {
       if (tableBody) {
-        tableBody.removeEventListener("scroll", handleScroll);
+        tableBody.removeEventListener("scroll", handleBodyScroll);
+      }
+      if (tableHeader) {
+        tableHeader.removeEventListener("scroll", handleHeaderScroll);
       }
     };
   }, []);
@@ -47,12 +62,17 @@ const AssetsTable = ({ row, col, clickable = false }) => {
             {col.map((item, index) => (
               <th
                 key={index}
-                className="px-6 w-40 py-4 font-semibold text-center "
+                className="px-6 min-w-32 py-4 font-semibold text-center"
               >
                 {item}
               </th>
             ))}
-            {clickable && <th className="w-10"></th>}
+            {clickable && (
+              <td className="w-10 py-4 whitespace-nowrap text-right">
+                <ChevronRight className="inline-bloc text-gray-800" size={20} />
+              </td>
+            )}
+            <td className="w-2 text-black">|</td>
           </tr>
         </thead>
       ) : (
@@ -60,7 +80,7 @@ const AssetsTable = ({ row, col, clickable = false }) => {
           {row.map((r, index) => (
             <tr
               key={index}
-              className={`border-b  transition-colors duration-200 ${
+              className={`border-b transition-colors duration-200 ${
                 index % 2 === 0 ? "bg-white" : "bg-gray-50"
               } ${clickable ? "cursor-pointer hover:bg-gray-200" : ""}`}
               onClick={() => handleRowClick(r)}
@@ -68,7 +88,7 @@ const AssetsTable = ({ row, col, clickable = false }) => {
               {Object.entries(r).map(([key, value], idx) => (
                 <td
                   key={idx}
-                  className={`w-40 text-center py-4 ${
+                  className={`min-w-32 text-center py-4 ${
                     key === "ValueAdded"
                       ? value > 0
                         ? "text-green-600 font-semibold"
@@ -96,15 +116,15 @@ const AssetsTable = ({ row, col, clickable = false }) => {
 
   return (
     <div className="container mx-auto px-4 py-8 w-5/6 max-h-[80vh]">
-      <div className="bg-white shadow-xl rounded-lg overflow-hidden border border-gray-200">
+      <div className="bg-white shadow-2xl rounded-lg overflow-hidden border border-gray-200 transform perspective-1000 ">
         <div
-          className="overflow-x-auto invisible-scrollbar"
+          className="overflow-x-auto invisible-scrollbar relative z-10 bg-gray-800"
           ref={tableHeaderRef}
         >
           {renderTableContent(true)}
         </div>
         <div
-          className="max-h-[60vh] overflow-y-auto overflow-x-auto custom-scrollbar"
+          className="max-h-[60vh] overflow-y-auto overflow-x-auto custom-scrollbar relative"
           ref={tableBodyRef}
         >
           {renderTableContent()}

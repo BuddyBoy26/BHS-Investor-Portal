@@ -167,8 +167,8 @@ const Assets = () => {
     },
   ];
   return (
-    <div className="w-full flex flex-col bg-gray-100 h-[calc(100vh-64px)]">
-      <h1 className="w-full text-4xl text-center font-bold pb-8 pt-10">
+    <div className="w-full flex flex-col bg-gray-100 min-h-[calc(100vh-64px)]">
+      <h1 className="w-full text-4xl text-center font-bold pb-4 pt-10">
         Assets
       </h1>
       <AssetsTable row={data} col={col} small={false} clickable={true} />
