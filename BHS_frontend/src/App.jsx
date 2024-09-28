@@ -28,7 +28,16 @@ const App = () => {
         <NavBar isUser={isUser} setIsUser={setIsUser} />
         <div className="w-full h-full bg-[#EBEBEB]">
           <Routes>
-            <Route path="/" element={<Investment />} />
+            <Route
+              path="/"
+              element={
+                isUser ? (
+                  <Investment />
+                ) : (
+                  <Login isUser={isUser} setIsUser={setIsUser} />
+                )
+              }
+            />
             <Route
               path="/login"
               element={<Login isUser={isUser} setIsUser={setIsUser} />}
