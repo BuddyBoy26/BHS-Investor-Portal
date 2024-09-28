@@ -5,6 +5,14 @@ const ContactForm = () => {
   return (
     <div className="bg-gradient-to-br from-blue-50 to-indigo-100 min-h-screen px-4 py-8 sm:py-16">
       {/* Feature Boxes */}
+      <div className="text-center mb-12">
+        <h1 className="text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-amber-500 to-yellow-600 mb-2">
+          BHAVYA
+        </h1>
+        <p className="text-2xl italic text-[#EBB251] font-semibold">
+          Haulage Services
+        </p>
+      </div>
       <div className="container mx-auto mb-16">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           <FeatureBox icon={<Map size={48} />} title="Find Us" content="Oﬃce 1420 - JAFZA 1 Tower, P.O. Box 124707 Jebel Ali Freezone, Dubai - U.A.E" />
