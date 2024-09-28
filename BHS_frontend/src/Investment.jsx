@@ -61,7 +61,7 @@ const Investment = () => {
             <Card title="Investment Value" value="1.80M" subtext="" subtextColor="text-green-500" />
             <Card title="No. of Assets" value="12" subtext="" subtextColor="text-gray-500" />
             <Card title="Ticket size" value="150K" subtext="" subtextColor="text-green-500" />
-            <Card title="Agreed ROI" button={<DownloadButton onClick={downloadPDF} />} />
+            <Card title="Download Report" button={<DownloadButton onClick={downloadPDF} />} />
           </div>
 
           {/* Second row of cards */}
