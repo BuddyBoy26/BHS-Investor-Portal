@@ -1,5 +1,6 @@
 import React from "react";
 import AssetsTable from "./AssetsTable";
+import { Search } from "lucide-react";
 
 const Assets = () => {
   const col = ["S.No", "Number plate", "Type", "Brand", "Model", "Value added"];

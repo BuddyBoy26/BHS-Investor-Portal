@@ -1,5 +1,14 @@
 import React from "react";
 import AssetsTable from "./AssetsTable";
+import {
+  LineChart,
+  Line,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  Tooltip,
+  ResponsiveContainer,
+} from "recharts";
 
 const Asset = () => {
   const vehicleInfo = {
@@ -444,17 +453,32 @@ const Asset = () => {
       Location: "Dubai, UAE",
     },
   ];
+  const fuelData = [
+    { date: "2024-09-01", fuel: 300 },
+    { date: "2024-09-02", fuel: 200 },
+    { date: "2024-09-03", fuel: 250 },
+    { date: "2024-09-04", fuel: 220 },
+    { date: "2024-09-05", fuel: 190 },
+    { date: "2024-09-06", fuel: 160 },
+    { date: "2024-09-07", fuel: 130 },
+  ];
+
+  const paperStyles = {
+    backgroundColor: "#fff",
+    backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%23f0f0f0' fill-opacity='1.0'%3E%3Cpath opacity='.5' d='M96 95h4v1h-4v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9zm-1 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9z'/%3E%3Cpath d='M6 5V0H5v5H0v1h5v94h1V6h94V5H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+    boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08)",
+  };
 
   return (
     <div className="flex h-[calc(100vh-64px)]">
       {/* Left section: Vehicle information and tables */}
-      <div className="w-3/5  bg-gray-100 p-4 overflow-y-auto custom-scrollbar">
+      <div className="w-full lg:w-3/5 md:w-3/5  bg-gray-100 p-4 overflow-y-auto custom-scrollbar">
         {/* Vehicle Information Card */}
         <div className="bg-white rounded-lg shadow-md p-6 my-6 lg:m-6">
           <h2 className="text-2xl font-bold mb-4 text-gray-800 text-center">
             VEHICLE INFORMATION
           </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-2 gap-6 lg:m-6 my-6">
+          <div className="grid grid-cols-2 gap-6 lg:m-6 my-6">
             {Object.entries(vehicleInfo).map(([key, value]) => (
               <div
                 key={key}
@@ -468,7 +492,18 @@ const Asset = () => {
             ))}
           </div>
         </div>
-
+        <div className="bg-white rounded-lg shadow-md p-6 my-6 lg:m-6 lg:hidden md:hidden">
+          <h2 className="text-2xl font-bold mb-4 text-gray-800 text-center">
+            CURRENT LOCATION
+          </h2>
+          <div className="w-full h-[300px]">
+            <iframe
+              className="w-full h-full rounded-lg"
+              title="Map"
+              src="https://maps.google.com/maps?q=51.5074,0.1278&z=10&output=embed"
+            ></iframe>
+          </div>
+        </div>
         {/* Truck History Table */}
         <div className="bg-white rounded-lg shadow-md p-6 my-6 lg:m-6">
           <h2 className="text-2xl font-bold mb-4 text-gray-800 text-center">
@@ -489,6 +524,24 @@ const Asset = () => {
           <AssetsTable col={TripsColumn} row={TripsRow} small={true} />
         </div>
 
+        {/* New Fuel Chart Card */}
+        <div className="bg-white rounded-lg shadow-md p-6 my-6 lg:m-6">
+          <h2 className="text-2xl font-bold mb-4 text-gray-800 text-center">
+            FUEL CHART
+          </h2>
+          <div style={{ width: "100%", height: 300 }}>
+            <ResponsiveContainer>
+              <LineChart data={fuelData}>
+                <CartesianGrid strokeDasharray="3 3" />
+                <XAxis dataKey="date" />
+                <YAxis />
+                <Tooltip />
+                <Line dataKey="fuel" stroke="#B22222" />
+              </LineChart>
+            </ResponsiveContainer>
+          </div>
+        </div>
+
         {/* Violations Table */}
         <div className="bg-white rounded-lg shadow-md p-6 my-6 lg:m-6">
           <h2 className="text-2xl font-bold mb-4 text-gray-800 text-center">
@@ -498,14 +551,22 @@ const Asset = () => {
         </div>
       </div>
 
-      {/* Right section: Map */}
-      <div className="w-full lg:w-2/5 bg-white">
-        <div className="h-[500px] lg:h-full w-full overflow-hidden">
-          <iframe
-            className="w-full h-full"
-            title="Map"
-            src="https://maps.google.com/maps?q=51.5074,0.1278&z=10&output=embed"
-          ></iframe>
+      {/* Right section: Map (visible only on large screens) */}
+      <div
+        className="hidden lg:block lg:w-2/5 md:block md:w-2/5"
+        style={paperStyles}
+      >
+        <div className="h-full w-full p-6 flex flex-col">
+          <h2 className="text-2xl font-bold mb-4 text-gray-800 text-center">
+            CURRENT LOCATION
+          </h2>
+          <div className="h-[calc(100%-40px)] w-full">
+            <iframe
+              className="w-full h-full rounded-md mt-4 mb-8 shadow-2xl justify center"
+              title="Map"
+              src="https://maps.google.com/maps?q=51.5074,0.1278&z=10&output=embed"
+            ></iframe>
+          </div>
         </div>
       </div>
     </div>

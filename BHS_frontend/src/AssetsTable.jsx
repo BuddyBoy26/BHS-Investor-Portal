@@ -45,7 +45,10 @@ const AssetsTable = ({ row, col, clickable = false }) => {
         <thead className="bg-gray-800 text-white">
           <tr>
             {col.map((item, index) => (
-              <th key={index} className="px-6 py-4 font-semibold text-center ">
+              <th
+                key={index}
+                className="px-6 w-40 py-4 font-semibold text-center "
+              >
                 {item}
               </th>
             ))}
@@ -65,7 +68,7 @@ const AssetsTable = ({ row, col, clickable = false }) => {
               {Object.entries(r).map(([key, value], idx) => (
                 <td
                   key={idx}
-                  className={`px-6 text-center py-4 ${
+                  className={`w-40 text-center py-4 ${
                     key === "ValueAdded"
                       ? value > 0
                         ? "text-green-600 font-semibold"
