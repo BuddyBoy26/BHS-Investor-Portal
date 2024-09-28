@@ -12,6 +12,7 @@ import NavBar from "./NavBar";
 // import Trips from "./Trips";
 // =======
 // >>>>>>> Stashed changes
+
 import ContactForm from "./Contact";
 import GuidePage from "./Guide";
 import Trips from "./Trips";
