@@ -1,7 +1,14 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 
-const Signup = () => {
+const Signup = ({ isUser, setIsUser }) => {
+  const navigate = useNavigate();
+  const handleClick = (event) => {
+    event.preventDefault(); // Prevent default form submission
+    setIsUser(true);
+    navigate("/", { replace: true });
+  };
   return (
     <div className="bg-gradient-to-br from-blue-50 to-indigo-100 min-h-[calc(100vh-64px)] flex items-center justify-center p-4">
       <motion.div
@@ -77,8 +84,8 @@ const Signup = () => {
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                type="submit"
                 className="w-full bg-[#EBB251] text-white text-lg py-2 rounded-xl hover:bg-[#EBB251] transition duration-300 mt-6"
+                onClick={handleClick}
               >
                 Register
               </motion.button>

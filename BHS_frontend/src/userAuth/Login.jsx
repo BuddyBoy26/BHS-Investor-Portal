@@ -1,14 +1,21 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 
-const Login = () => {
+const Login = ({ isUser, setIsUser }) => {
+  const navigate = useNavigate();
+  const handleClick = (event) => {
+    event.preventDefault(); // Prevent default form submission
+    setIsUser(true);
+    navigate("/", { replace: true });
+  };
   return (
     <div className="min-h-[calc(100vh-64px)] flex items-center justify-center p-8 bg-gradient-to-br from-blue-50 to-indigo-100">
       <motion.div
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
-        className="bg-white shadow-2xl rounded-3xl p-8 w-full max-w-4xl mx-auto flex flex-col md:flex-row justify-between items-center"
+        className="bg-white shadow-2xl rounded-3xl p-8 w-full max-w-5xl mx-auto flex flex-col md:flex-row justify-between items-center"
       >
         <div className="w-full md:w-2/5 mb-8 md:mb-0 flex flex-col items-center justify-center">
           <div className="text-center mb-8">
@@ -23,12 +30,12 @@ const Login = () => {
             className="w-48 h-48 object-contain"
           />
         </div>
-        <div className="w-full lg:max-w-5/6 md:w-3/5 md:pl-8">
+        <div className="w-full md:w-3/5 md:pl-8 flex justify-center">
           <motion.div
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="bg-gray-50 p-8 rounded-2xl shadow-lg"
+            className="bg-gray-50 p-8 rounded-2xl shadow-lg w-full max-w-md"
           >
             <h3 className="text-2xl font-bold mb-6 text-center text-gray-800">
               Investor's Login
@@ -59,6 +66,7 @@ const Login = () => {
                 whileTap={{ scale: 0.95 }}
                 type="submit"
                 className="w-full bg-[#EBB251] text-white text-lg py-2 rounded-xl hover:bg-[#EBB251] transition duration-300 mt-6"
+                onClick={handleClick}
               >
                 Login
               </motion.button>
