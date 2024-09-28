@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { ChevronRight, Home, Map, Truck, User, DollarSign, FileText, HelpCircle, PhoneCall, LogIn, ExternalLink } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const GuideSection = ({ title, icon, content, isOpen, toggle, link }) => (
   <div className="mb-6 bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 ease-in-out">
@@ -20,16 +21,16 @@ const GuideSection = ({ title, icon, content, isOpen, toggle, link }) => (
           {content.map((item, index) => (
             <li key={index} className="flex items-start px-10">
               <div className="flex-shrink-0 w-1.5 h-1.5 mt-2 rounded-full bg-blue-500 mr-2 "></div>
-              <span >{item}</span>
+              <span>{item}</span>
             </li>
           ))}
           <li className="mt-4 px-4">
-            <a
-              href={link}
+            <Link
+              to={link}
               className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-black bg-gray-300 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 my-5"
             >
               Go to {title} <ExternalLink className="ml-2 h-4 w-4" />
-            </a>
+            </Link>
           </li>
         </ul>
       </div>
@@ -99,7 +100,6 @@ const GuidePage = () => {
       ],
       link: "/contact"
     },
-    
   ];
 
   return (
