@@ -58,15 +58,15 @@ const Investment = () => {
         <main>
           {/* First row of cards */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
-            <Card title="Investment Value" value="1.80M" subtext="" subtextColor="text-green-500" />
+            <Card title="Investment Value" value="AED 1.80M" subtext="" subtextColor="text-green-500" />
             <Card title="No. of Assets" value="12" subtext="" subtextColor="text-gray-500" />
-            <Card title="Ticket size" value="150K" subtext="" subtextColor="text-green-500" />
-            <Card title="Agreed ROI" button={<DownloadButton onClick={downloadPDF} />} />
+            <Card title="Ticket size" value="AED 150K" subtext="" subtextColor="text-green-500" />
+            <Card title="Download Report" button={<DownloadButton onClick={downloadPDF} />} />
           </div>
 
           {/* Second row of cards */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
-            <Card title="Current Investment Value" value="2.11M" subtext="+AED 311K in 28 Days" subtextColor="text-green-500" />
+            <Card title="Current Investment Value" value="AED 2.11M" subtext="+AED 311K in 28 Days" subtextColor="text-green-500" />
             <Card title="Agreed ROI" value="10%" subtext="" subtextColor="text-gray-500" />
             <Card title="No. of Trips" value="108" subtext="+23 This Month" subtextColor="text-green-500" />
             <Card title="Download Contract" button={<DownloadButton onClick={downloadContract} />} />
